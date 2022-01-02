@@ -1,3 +1,12 @@
+Main branch of addressables.
+
+It should have the menu, a different readme, etc.
+
+
+Fork the repo to save your changes.
+clone the repo, then checkout the approriate branch
+
+
 > ## View the entire tutorial on [GameDev Resources](https://gamedev-resources.com/).
 > 
 # Introduction
