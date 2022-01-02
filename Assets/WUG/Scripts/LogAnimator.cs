@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.WUG.Scripts;
+using UnityEngine.AddressableAssets;
+
 public class LogAnimator : MonoBehaviour
 {
     public Transform m_Model => transform.GetChild(0);
@@ -30,6 +32,11 @@ public class LogAnimator : MonoBehaviour
         transform.position = Vector3.Lerp(m_startPosition, m_EndPosition, m_Time);
 
         m_Model.localPosition = Vector3.up * (Mathf.PingPong(Time.time, m_BobAmount) - .5f);
+
+        if (Vector3.Distance(transform.position, m_EndPosition) < .1f)
+        {
+            Addressables.ReleaseInstance(gameObject);
+        }
     }
 
 }
